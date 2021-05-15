@@ -1,0 +1,22 @@
+# Online Python compiler (interpreter) to run Python online.
+import pandas as pd
+import numpy as np
+
+data = [(i,i*(i+1)/2) for i in range(0,11)]
+cdf = pd.DataFrame(data,columns=('xi','cdf'))
+#print(cdf)
+cdf = cdf.sample(frac = 1)
+#print(cdf)
+cdf = cdf.sort_values('cdf',ascending = False)
+print(cdf)
+arr = cdf['cdf'].values
+for i in range(0,11):
+    #print(i)
+    if i == 10:
+        pass
+    else:
+        arr[i] -= arr[i+1]
+#print(arr)
+#print(cdf)
+#cdf['cdf'] = arr
+print(cdf)
