@@ -1,0 +1,13 @@
+cdf = pd.DataFrame(data)
+print(cdf)
+cdf = cdf.sort_values('cdf',ascending = False)
+#print(cdf)
+arr = cdf['cdf'].values
+arr2 = cdf['xi'].values
+for i in range(0,11):
+    if i == 10:
+        pass
+    else:
+        arr[i] = (arr[i] - arr[i+1])/(arr2[i]-arr2[i+1])
+#print(arr)
+print(cdf)
