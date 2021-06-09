@@ -1,0 +1,30 @@
+import copy
+dic = dict()
+
+t = 9
+numbers = [3, 34, 4, 12, 5, 2]
+
+t2 = 30
+numbers2 = [3, 34, 4, 12, 5, 2]
+
+def isSubSet(t,numbers):
+  #base case 
+  if t<0:
+    return None
+  if t==0:
+    return True
+    
+  else:
+    for i in numbers:
+      #print(i)
+      rem = t-i
+      intr = copy.copy(numbers)
+      intr.remove(i)
+      k = isSum(rem,intr)
+      if k ==True:
+        return True
+      else:
+          return False
+    
+        
+print(isSubSet(t2,numbers2))
